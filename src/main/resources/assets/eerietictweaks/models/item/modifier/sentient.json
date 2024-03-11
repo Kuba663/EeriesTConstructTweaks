@@ -1,0 +1,12 @@
+{
+  "textures": {
+    "broadsword": "eerietictweaks:items/sentient/broadsword.png",
+    "cleaver": "eerietictweaks:items/sentient/cleaver.png",
+    "cutlass": "eerietictweaks:items/sentient/broadsword.png",
+    "frypan": "eerietictweaks:items/sentient/frying_pan.png",
+    "kama": "eerietictweaks:items/sentient/kama.png",
+    "longsword": "eerietictweaks:items/sentient/longsword.png",
+    "rapier": "eerietictweaks:items/sentient/rapier.png",
+    "scythe": "eerietictweaks:items/sentient/scythe.png"
+  }
+}
