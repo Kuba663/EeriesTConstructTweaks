@@ -6,15 +6,25 @@ import crazypants.enderio.util.CapturedMob;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.registries.GameData;
 import org.jetbrains.annotations.NotNull;
+import pl.net.eerie.tictweaks.traits.enderio.SoulfulTrait;
 import slimeknights.mantle.util.RecipeMatch;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class IntegrationEnderIO {
+
+    public static final Map<EntityEntry, SoulfulTrait> SOUL_TRAITS = new HashMap<>();
+
+    public static void registerSoulTraits() {
+        for(EntityEntry entry : GameData.getEntityRegistry().getValuesCollection())
+            SOUL_TRAITS.put(entry, new SoulfulTrait(entry));
+    }
+
     public static class CapturedMobRecipeMatch extends RecipeMatch {
 
         @GameRegistry.ObjectHolder("enderio:item_soul_vial")

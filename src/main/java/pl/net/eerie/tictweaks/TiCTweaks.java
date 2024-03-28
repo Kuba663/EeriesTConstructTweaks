@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.Logger;
 import pl.net.eerie.tictweaks.integration.IntegrationBloodMagic;
+import pl.net.eerie.tictweaks.integration.IntegrationEnderIO;
 import pl.net.eerie.tictweaks.integration.IntegrationLycanitesMobs;
 import pl.net.eerie.tictweaks.proxy.CommonProxy;
 
@@ -61,6 +62,7 @@ public class TiCTweaks {
     public void postinit(FMLPostInitializationEvent event) {
         if (Loader.isModLoaded("bloodmagic")) BLOOD_MAGIC_INTEGRATION = new IntegrationBloodMagic();
         if (Loader.isModLoaded("lycanitesmobs")) IntegrationLycanitesMobs.registerModifiers();
+        if (Loader.isModLoaded("enderio")) IntegrationEnderIO.registerSoulTraits();
         proxy.postInit(event);
     }
 }
