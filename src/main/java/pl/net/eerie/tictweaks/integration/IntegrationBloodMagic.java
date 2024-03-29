@@ -8,7 +8,7 @@ import pl.net.eerie.tictweaks.traits.bloodmagic.SentientTrait;
 import slimeknights.mantle.pulsar.pulse.Pulse;
 import slimeknights.tconstruct.common.ModelRegisterUtil;
 
-@Pulse(id = "bloodMagicIntegration", description = "Integration with blood magic", modsRequired = "bloodmagic")
+@Pulse(id = "bloodMagicIntegration", description = "Integration with blood magic", modsRequired = "bloodmagic", defaultEnable = true)
 public class IntegrationBloodMagic {
     private SentientTrait TRAIT_SENTIENT;
 

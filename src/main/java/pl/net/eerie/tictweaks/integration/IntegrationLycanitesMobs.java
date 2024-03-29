@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@Pulse(id = "lycanitesmobsIntegration", description = "Integration with Lycanite's Mobs", modsRequired = "lycanitesmobs")
+@Pulse(id = "lycanitesmobsIntegration", description = "Integration with Lycanite's Mobs", modsRequired = "lycanitesmobs", defaultEnable = true)
 public class IntegrationLycanitesMobs {
 
     public static final Map<ElementInfo, ElementTrait> MODIFIERS_ELEMENT = new HashMap<>();

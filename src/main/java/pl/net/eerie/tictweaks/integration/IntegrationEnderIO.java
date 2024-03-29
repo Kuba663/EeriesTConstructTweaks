@@ -17,7 +17,7 @@ import slimeknights.mantle.pulsar.pulse.Pulse;
 import slimeknights.mantle.util.RecipeMatch;
 
 import java.util.*;
-@Pulse(id = "enderioIntegration", description = "integration with EnderIO", modsRequired = "enderio")
+@Pulse(id = "enderioIntegration", description = "integration with EnderIO", modsRequired = "enderio", defaultEnable = false)
 public class IntegrationEnderIO {
 
     public static final Map<EntityEntry, SoulfulTrait> SOUL_TRAITS = new HashMap<>();
