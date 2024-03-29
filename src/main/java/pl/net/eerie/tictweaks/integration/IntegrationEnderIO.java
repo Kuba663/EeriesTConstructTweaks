@@ -1,26 +1,30 @@
 package pl.net.eerie.tictweaks.integration;
 
 
+import com.google.common.eventbus.Subscribe;
 import crazypants.enderio.base.item.soulvial.ItemSoulVial;
 import crazypants.enderio.util.CapturedMob;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.GameData;
 import org.jetbrains.annotations.NotNull;
 import pl.net.eerie.tictweaks.traits.enderio.SoulfulTrait;
+import slimeknights.mantle.pulsar.pulse.Pulse;
 import slimeknights.mantle.util.RecipeMatch;
 
 import java.util.*;
-
+@Pulse(id = "enderioIntegration", description = "integration with EnderIO", modsRequired = "enderio")
 public class IntegrationEnderIO {
 
     public static final Map<EntityEntry, SoulfulTrait> SOUL_TRAITS = new HashMap<>();
 
-    public static void registerSoulTraits() {
+    @Subscribe
+    public void postInit(FMLPostInitializationEvent event) {
         for(EntityEntry entry : GameData.getEntityRegistry().getValuesCollection())
             SOUL_TRAITS.put(entry, new SoulfulTrait(entry));
     }

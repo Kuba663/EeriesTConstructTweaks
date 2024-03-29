@@ -24,6 +24,5 @@ public class ClientProxy implements CommonProxy {
 
     @Override
     public void postInit(FMLPostInitializationEvent event) {
-        if (Loader.isModLoaded("bloodmagic")) ModelRegisterUtil.registerModifierModel(TiCTweaks.INSTANCE.BLOOD_MAGIC_INTEGRATION.TRAIT_SENTIENT, new ResourceLocation(TiCTweaks.MOD_ID, "models/item/modifier/sentient"));
     }
 }

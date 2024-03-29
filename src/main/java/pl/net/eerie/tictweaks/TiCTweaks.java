@@ -11,6 +11,7 @@ import pl.net.eerie.tictweaks.integration.IntegrationBloodMagic;
 import pl.net.eerie.tictweaks.integration.IntegrationEnderIO;
 import pl.net.eerie.tictweaks.integration.IntegrationLycanitesMobs;
 import pl.net.eerie.tictweaks.proxy.CommonProxy;
+import slimeknights.mantle.pulsar.control.PulseManager;
 
 @Mod(
         modid = TiCTweaks.MOD_ID,
@@ -24,9 +25,15 @@ public class TiCTweaks {
     public static final String MOD_NAME = "EΣrie's tweaks for Tinker's Construct";
     public static final String VERSION = "1.0-SNAPSHOT";
 
-    public IntegrationBloodMagic BLOOD_MAGIC_INTEGRATION;
-
     public Logger log;
+
+    private final static PulseManager pulsar = new PulseManager("modules");
+
+    static {
+        pulsar.registerPulse(new IntegrationBloodMagic());
+        pulsar.registerPulse(new IntegrationLycanitesMobs());
+        pulsar.registerPulse(new IntegrationEnderIO());
+    }
 
     /**
      * This is the instance of your mod as created by Forge. It will never be null.
@@ -45,6 +52,7 @@ public class TiCTweaks {
     public void preinit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
         this.log = event.getModLog();
+        pulsar.propagateEvent(event);
     }
 
     /**
@@ -53,6 +61,7 @@ public class TiCTweaks {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
+        pulsar.propagateEvent(event);
     }
 
     /**
@@ -60,9 +69,7 @@ public class TiCTweaks {
      */
     @Mod.EventHandler
     public void postinit(FMLPostInitializationEvent event) {
-        if (Loader.isModLoaded("bloodmagic")) BLOOD_MAGIC_INTEGRATION = new IntegrationBloodMagic();
-        if (Loader.isModLoaded("lycanitesmobs")) IntegrationLycanitesMobs.registerModifiers();
-        if (Loader.isModLoaded("enderio")) IntegrationEnderIO.registerSoulTraits();
         proxy.postInit(event);
+        pulsar.propagateEvent(event);
     }
 }
