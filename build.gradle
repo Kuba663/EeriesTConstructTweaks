@@ -100,6 +100,7 @@ dependencies {
     implementation fg.deobf("com.lycanitesmobs:lycanitesmobs-1.12.2:2.0.8.9")
 
     implementation fg.deobf("com.enderio:EnderIO-1.12.2:5.3.72")
+    implementation fg.deobf("com.enderio.core:EnderCore:1.12.2-0.5.78")
 
     implementation fg.deobf("com.wayoftime.bloodmagic:BloodMagic-1.12.2:2.4.3-105")
 
