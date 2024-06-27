@@ -1,0 +1,25 @@
+{
+  "modifier": "lunar_edge",
+  "text": [
+    {
+      "text": "Sharpens your sword with the power of the moon!"
+    }
+  ],
+  "effects": [
+    "Fight better under the clear night sky!",
+    "Imagine an epic astral flare effect on your sword!",
+    "(I am not drawing that)",
+    "Extra Experience not included",
+    "Watch out for the blood moon!"
+  ],
+  "demoTool": [
+    "tconstruct:broadsword",
+    "tconstruct:longsword",
+    "tconstruct:cleaver",
+    "tconstruct:cutlass",
+    "tconstruct:frypan",
+    "tconstruct:kama",
+    "tconstruct:rapier",
+    "tconstruct:scythe"
+  ]
+}

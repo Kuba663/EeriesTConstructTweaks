@@ -43,8 +43,8 @@ public class SentientTrait extends ModifierTrait implements IDemonWillWeapon, IS
 
     private final RecipeMatch tartaricGemMatch = RecipeMatch.of(tartaric_gem);
 
-    public SentientTrait() {
-        super("sentient", Color.CYAN.getRGB(), 7, 1);
+    public SentientTrait(String id) {
+        super(id, Color.CYAN.getRGB(), 7, 10);
     }
 
     @Override

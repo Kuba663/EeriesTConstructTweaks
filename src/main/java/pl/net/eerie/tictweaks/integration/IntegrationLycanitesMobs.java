@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
 import pl.net.eerie.tictweaks.traits.lycanitesmobs.ElementTrait;
 import slimeknights.mantle.pulsar.pulse.Pulse;
 import slimeknights.mantle.util.RecipeMatch;
+import slimeknights.tconstruct.library.TinkerRegistry;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,12 +24,12 @@ import java.util.Optional;
 @Pulse(id = "lycanitesmobsIntegration", description = "Integration with Lycanite's Mobs", modsRequired = "lycanitesmobs", defaultEnable = true)
 public class IntegrationLycanitesMobs {
 
-    public static final Map<ElementInfo, ElementTrait> MODIFIERS_ELEMENT = new HashMap<>();
-
     @Subscribe
     public void postInit(FMLPostInitializationEvent event) {
         for (ElementInfo info : ElementManager.INSTANCE.elements.values()) {
-            MODIFIERS_ELEMENT.put(info, new ElementTrait(info));
+            if (TinkerRegistry.getTrait(String.format("elemental_%s", info.name )) == null) {
+                new ElementTrait(info);
+            }
         }
     }
 

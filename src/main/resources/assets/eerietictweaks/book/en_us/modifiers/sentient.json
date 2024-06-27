@@ -1,0 +1,32 @@
+{
+  "modifier": "sentient",
+  "text": [
+    {
+      "text": "Are you tired of having to throw lassos at skeletons and zombies?"
+    },
+    {
+      "text": "\n"
+    },
+    {
+      "text": "This modifier is the solution to all of your problems! "
+    },
+    {
+      "text": " Regardless if you have them or not!"
+    }
+  ],
+  "effects": [
+    "Actively fill your tartaric jewels while fighting!",
+    "I meant gems.",
+    "Sorry..."
+  ],
+  "demoTool": [
+    "tconstruct:broadsword",
+    "tconstruct:longsword",
+    "tconstruct:cleaver",
+    "tconstruct:cutlass",
+    "tconstruct:frypan",
+    "tconstruct:kama",
+    "tconstruct:rapier",
+    "tconstruct:scythe"
+  ]
+}

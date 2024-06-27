@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 import pl.net.eerie.tictweaks.integration.IntegrationBloodMagic;
 import pl.net.eerie.tictweaks.integration.IntegrationEnderIO;
 import pl.net.eerie.tictweaks.integration.IntegrationLycanitesMobs;
+import pl.net.eerie.tictweaks.integration.IntegrationNyx;
 import pl.net.eerie.tictweaks.proxy.CommonProxy;
 import slimeknights.mantle.pulsar.control.PulseManager;
 
@@ -17,7 +18,7 @@ import slimeknights.mantle.pulsar.control.PulseManager;
         modid = TiCTweaks.MOD_ID,
         name = TiCTweaks.MOD_NAME,
         version = TiCTweaks.VERSION,
-        dependencies = "required-before:tconstruct;required-before:mantle;before:bloodmagic;before:lycanitesmobs;before:enderio"
+        dependencies = "required-before:tconstruct;required-before:mantle;before:bloodmagic;before:lycanitesmobs;before:enderio;before:nyx"
 )
 public class TiCTweaks {
 
@@ -27,12 +28,13 @@ public class TiCTweaks {
 
     public Logger log;
 
-    private final static PulseManager pulsar = new PulseManager("modules");
+    private final static PulseManager pulsar = new PulseManager("/eerietic/modules");
 
     static {
         pulsar.registerPulse(new IntegrationBloodMagic());
         pulsar.registerPulse(new IntegrationLycanitesMobs());
         pulsar.registerPulse(new IntegrationEnderIO());
+        pulsar.registerPulse(new IntegrationNyx());
     }
 
     /**

@@ -9,15 +9,15 @@ import pl.net.eerie.tictweaks.TiCTweaks;
 
 import java.util.Map;
 
-@Config(modid = TiCTweaks.MOD_ID, name = "SoulTraits")
+@Config(modid = TiCTweaks.MOD_ID, name = "/eerietic/soul_traits")
 public class SoulTraitsConfig {
 
     public static boolean logErrors = true;
 
-    public static Map<ResourceLocation, String[]> entityTraits;
+    public static Map<String, String[]> entityTraits;
 
     static {
         entityTraits = Maps.newHashMap();
-        entityTraits.put(EntityList.getKey(EntityBlaze.class), new String[]{"flammable", "hellish"});
+        entityTraits.put(EntityList.getKey(EntityBlaze.class).toString(), new String[]{"flammable", "hellish"});
     }
 }

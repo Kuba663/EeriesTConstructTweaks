@@ -76,7 +76,7 @@ public class SoulfulTrait extends ModifierTrait {
         }
 
         traits.appendTag(new NBTTagString(this.identifier));
-        if (SoulTraitsConfig.entityTraits.containsKey(entity.getRegistryName())) for (String str : SoulTraitsConfig.entityTraits.get(entity.getRegistryName()))
+        if (SoulTraitsConfig.entityTraits.containsKey(entity.getRegistryName().toString())) for (String str : SoulTraitsConfig.entityTraits.get(entity.getRegistryName().toString()))
             if (TinkerRegistry.getTrait(str) != null) traits.appendTag(new NBTTagString(str));
             else if (SoulTraitsConfig.logErrors) TiCTweaks.INSTANCE.log.log(Level.WARN, String.format("Trait %s does not exits", str));
         TagUtil.setTraitsTagList(rootCompound, traits);

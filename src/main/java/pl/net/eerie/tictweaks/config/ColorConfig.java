@@ -6,7 +6,7 @@ import pl.net.eerie.tictweaks.TiCTweaks;
 
 import java.util.Map;
 
-@Config(modid = TiCTweaks.MOD_ID, name = "colors", category = "colors")
+@Config(modid = TiCTweaks.MOD_ID, name = "/eerietic/colors", category = "colors")
 public class ColorConfig {
 
     @Config.RequiresMcRestart()
