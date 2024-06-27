@@ -53,8 +53,10 @@ public class IntegrationLycanitesMobs {
             int stillNeeded = this.amountNeeded;
             for (ItemStack stack : nonNullList) {
                 if (stack.getItem() instanceof ChargeItem && ((ChargeItem)stack.getItem()).getElements().contains(this.element)) {
-                    found.add(stack);
-                    if ((stillNeeded -= stack.getCount()) <= 0) {
+                    ItemStack copy = stack.copy();
+                    copy.setCount(Math.min(copy.getCount(), stillNeeded));
+                    found.add(copy);
+                    if ((stillNeeded -= copy.getCount()) <= 0) {
                         return Optional.of(new Match(found, this.amountNeeded));
                     }
                 }
