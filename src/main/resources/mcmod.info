@@ -11,7 +11,7 @@
       "EΣrie", "4372696D736F6E", "or any other alias of mine"
     ],
     "credits": "Slimeknights, Way of Time, Lycanite, TeamEnder (CrazyPants, tterrag, HenryLoenwind, MatthiasM , CyanideX, EpicSquid) and last (also least) me.",
-    "logoFile": "",
+    "logoFile": "assets/eerietictweaks/logo.png",
     "screenshots": [],
     "dependencies": [ "tconstruct", "bloodmagic", "mantle", "lycanitesmobs", "enderio", "nyx" ]
   }
